@@ -1,0 +1,9 @@
+---
+import HoverCardToggle from './HoverCardToggle.jsx';
+
+const { title, category, children } = Astro.props;
+---
+
+<HoverCardToggle title={title} category={category} client:only="react">
+  <slot />
+</HoverCardToggle>
