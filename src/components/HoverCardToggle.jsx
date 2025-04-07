@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-export default function HoverCardToggle({ title, category, children, forceExpand = null, code = "", link}) {
+export default function HoverCardToggle({ title, category, children, forceExpand = null, code = "", link = ""}) {
   const wrapperRef = useRef(null);
   const contentRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
