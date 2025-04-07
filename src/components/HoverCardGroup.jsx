@@ -148,6 +148,7 @@ const cardData = [
   },
   {
     title: '<li> / <ol> / <ul>',
+    category: 'HTML',
     content: 'Create a list, either organized with numbers or unorganized with bullet points. Use ol or ul to create the list, and li for each list element.',
     code: `
     <body>
@@ -162,6 +163,7 @@ const cardData = [
   },
   {
     title: '<form> / <input> / <label>',
+    category: 'HTML',
     content: 'Create a form with an input field to take input from a user',
     code: `
      <form action="/action_page.php">
