@@ -172,7 +172,7 @@ const cardData = [
     </form> 
     `,
     link: 'https://www.w3schools.com/tags/tag_input.asp'
-  }
+  },
   {
     title: "box-sizing",
     category: "CSS",
