@@ -147,6 +147,33 @@ const cardData = [
     link: 'https://www.w3schools.com/css/css_rwd_viewport.asp'
   },
   {
+    title: '<li> / <ol> / <ul>',
+    content: 'Create a list, either organized with numbers or unorganized with bullet points. Use ol or ul to create the list, and li for each list element.',
+    code: `
+    <body>
+      <ul>
+        <li>A list item with a bullet point</li>
+      </ul>
+      <ol>
+        <li>A list item with a number</li>
+      </ol>
+    `,
+    link: 'https://www.w3schools.com/Html/html_lists.asp'
+  },
+  {
+    title: '<form> / <input> / <label>',
+    content: 'Create a form with an input field to take input from a user',
+    code: `
+     <form action="/action_page.php">
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+    </form> 
+    `,
+    link: 'https://www.w3schools.com/tags/tag_input.asp'
+  }
+  {
     title: "box-sizing",
     category: "CSS",
     content: "This setting makes sizing easier by including padding and borders in the element's size.",
