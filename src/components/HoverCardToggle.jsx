@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-export default function HoverCardToggle({ title, category, children, forceExpand = null, code = "", link = ""}) {
-  const wrapperRef = useRef(null);
-  const contentRef = useRef(null);
+export default function HoverCardToggle({ title, category, content, forceExpand = null, code = "", link = ""}) {
   const [expanded, setExpanded] = useState(false);
 
   const toggle = () => setExpanded(prev => !prev);
@@ -14,57 +12,62 @@ export default function HoverCardToggle({ title, category, children, forceExpand
     }
   }, [forceExpand]);
 
-  useEffect(() => {
-    if (!contentRef.current || !wrapperRef.current) return;
-    wrapperRef.current.style.height = expanded
-      ? `${contentRef.current.scrollHeight}px`
-      : "0px";
-  }, [expanded]);
+return (
+		<div className="relative card">
+			<div className="bg-white/10 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 rounded-xl shadow-md p-4 transition-all duration-300 flex flex-col">
+				<div className="flex justify-between items-start gap-4 mb-3">
+					<h2 className="text-lg font-semibold min-w-0 break-words">{title}</h2>
+					<span className="flex-shrink-0 text-xs px-2 py-1 rounded-full bg-purple-300 dark:bg-purple-600 text-white font-medium shadow-sm">
+						{category}
+					</span>
+				</div>
 
-  return (
-    <div className="relative card">
-      <div className="bg-white dark:bg-gray-700 rounded-xl shadow-md p-4 transition-all duration-300 border-2 border-transparent hover:border-purple-400 dark:hover:border-purple-500">
-        <h2 className="text-lg font-semibold mb-3">{title}</h2>
-        <button
-          type="button"
-          onClick={toggle}
-          className="inline-flex items-center gap-1 px-4 py-1 rounded-full bg-purple-200 dark:bg-purple-500 text-purple-800 dark:text-white text-sm font-medium hover:bg-purple-300 dark:hover:bg-purple-400 transition mb-3"
-        >
-          {expanded ? (
-            <>
-              <ChevronUp className="w-4 h-4" /> Hide
-            </>
-          ) : (
-            <>
-              <ChevronDown className="w-4 h-4" /> Show
-            </>
-          )}
-        </button>
-        <div ref={wrapperRef} className="overflow-hidden transition-all duration-300">
-        <div ref={contentRef} className="space-y-3">
-          <p className="text-sm text-gray-700 dark:text-gray-300">{children}</p>
-          {code && (
-          <pre className="bg-gray-100 dark:bg-gray-800 text-sm p-3 rounded-md overflow-x-auto text-gray-800 dark:text-gray-100">
-          <code>{code}</code>
-          </pre>
-          )}
-          {link && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex mt-2 items-center px-3 py-1.5 text-sm font-medium bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
-            >
-              Learn more on W3Schools
-            </a>
-          )}
-        </div>
+				<button
+					type="button"
+					onClick={() => setExpanded((prev) => !prev)}
+					className="inline-flex items-center justify-center gap-1 px-4 py-1 rounded-full bg-purple-200 dark:bg-purple-500 text-purple-800 dark:text-white text-sm font-medium hover:bg-purple-300 dark:hover:bg-purple-400 transition mb-3 self-start"
+				>
+					{expanded ? (
+						<>
+							<ChevronUp className="w-4 h-4" /> Hide
+						</>
+					) : (
+						<>
+							<ChevronDown className="w-4 h-4" /> Show
+						</>
+					)}
+				</button>
 
-        </div>
-        <span className="absolute top-2 right-3 text-xs px-2 py-1 rounded-full bg-purple-300 dark:bg-purple-600 text-white font-medium shadow-sm">
-          {category}
-        </span>
-      </div>
-    </div>
-  );
+				<div
+					className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+					style={{
+						gridTemplateRows: expanded ? "1fr" : "0fr",
+					}}
+				>
+					<div className="overflow-hidden">
+						<div className="space-y-3 pt-2">
+							<p className="text-sm text-gray-700 dark:text-gray-300">
+								{content}
+							</p>
+							{code && (
+								<pre className="bg-black/20 text-sm p-3 rounded-md overflow-x-auto text-gray-100">
+									<code>{code}</code>
+								</pre>
+							)}
+							{link && (
+								<a
+									href={link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-block mt-2 px-3 py-1.5 text-sm font-medium text-white rounded-full transition bg-blue-500/20 backdrop-blur-sm border border-blue-300/30 hover:bg-blue-500/40 hover:border-blue-300/50"
+								>
+									Learn more on W3Schools
+								</a>
+							)}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }

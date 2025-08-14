@@ -1,0 +1,29 @@
+---
+// This component accepts props to make it reusable
+interface Props {
+  href: string;
+  imageUrl: string;
+  imageAlt: string;
+  label: string;
+}
+
+const { href, imageUrl, imageAlt, label } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group block rounded-2xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl"
+>
+  <div
+    class="w-64 h-64 bg-white/10 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg flex flex-col items-center justify-center p-8 transition-colors group-hover:border-purple-400/50"
+  >
+    <img
+      src={imageUrl}
+      alt={imageAlt}
+      class="w-32 h-32 object-contain"
+    />
+    <span class="mt-4 text-xl font-semibold text-white">
+      {label}
+    </span>
+  </div>
+</a>

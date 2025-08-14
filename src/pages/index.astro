@@ -1,23 +1,37 @@
 ---
 import '../styles/global.css';
+import AnimatedBlobBackground from '../components/AnimatedBlobBackground.astro';
+import WelcomeButton from '../components/WelcomeBtn.astro';
 ---
 
 <html lang="en" class="dark">
   <head>
-    <title>Learn | Dombestein Data</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Web Dev Reference</title>
   </head>
-  <body class="bg-gradient-to-br from-pink-100 to-purple-200 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-100 min-h-screen font-sans">
-    <main class="max-w-6xl mx-auto px-4 py-10">
-      <h1 class="text-4xl font-bold mb-6">Welcome!</h1>
-      <p>Select what you want to learn.</p>
-      <a
-        href="https://learn.dombesteindata.net/html-css"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex mt-2 items-center px-3 py-1.5 text-sm font-medium bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
-        >
-        HTML/CSS
-        </a>
+  <body class="dark:text-gray-100 min-h-screen font-sans">
+    
+    <AnimatedBlobBackground />
+
+    <main class="min-h-screen flex flex-col items-center justify-center text-center p-4 relative z-10">
+      <h1 class="text-5xl md:text-6xl font-bold text-white">Welcome!</h1>
+      <p class="mt-2 text-lg text-gray-400">Select what you want to learn</p>
+
+      <div class="mt-12 flex flex-wrap justify-center gap-8 md:gap-12">
+        <WelcomeButton
+          href="/html-css"
+          imageUrl="https://learn.dombesteindata.net/html_css.png"
+          imageAlt="HTML5 and CSS3 logos"
+          label="HTML & CSS"
+        />
+        <WelcomeButton
+          href="/javascript"
+          imageUrl="https://learn.dombesteindata.net/JavaScript.png"
+          imageAlt="JavaScript logo"
+          label="JavaScript"
+        />
+      </div>
     </main>
   </body>
 </html>
