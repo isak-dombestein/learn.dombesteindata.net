@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Copy, Check } from "lucide-react";
 
 export default function HoverCardToggle({ title, category, content, forceExpand = null, code = "", link = ""}) {
   const [expanded, setExpanded] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const toggle = () => setExpanded(prev => !prev);
 
@@ -11,6 +12,12 @@ export default function HoverCardToggle({ title, category, content, forceExpand 
       setExpanded(forceExpand);
     }
   }, [forceExpand]);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000)
+  }
 
 return (
 		<div className="relative card">
@@ -50,7 +57,18 @@ return (
 								{content}
 							</p>
 							{code && (
-								<pre className="bg-black/20 text-sm p-3 rounded-md overflow-x-auto text-gray-100">
+								<pre className="relative bg-black/20 text-sm p-3 rounded-md overflow-x-auto text-gray-100">
+                  <button
+                    onClick={handleCopy}
+                    className="absolute top-2 right-2 p-1.5 rounded-md bg-gray-700/50 hover:bg-gray-600/70 transition text-gray-300"
+                    aria-label="Copy Code"
+                  >
+                    {isCopied ? (
+                      <Check className="w-4 h-4 text-green-400" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </button>
 									<code>{code}</code>
 								</pre>
 							)}

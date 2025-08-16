@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import HoverCardGroup from "../components/HoverCardGroup.jsx";
+import Navigation from "../components/Navigation.astro"; 
+import AnimatedBlobBackground from '../components/AnimatedBlobBackground.astro';
+import { cardData } from "../data/cardData.js"; // Import all data
+
+// Filter the data for this page specifically
+const htmlCssCards = cardData.filter(
+  card => card.category === 'CSS'
+);
+---
+
+<html lang="en" class="dark">
+  <head>
+    <title>CSS Reference</title>
+  </head>
+  <body class="dark:text-gray-100 min-h-screen font-sans">
+
+    <AnimatedBlobBackground />
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">CSS Reference</h1>
+        <p class="text-base md:text-lg text-gray-600 dark:text-gray-400">Core concepts for styling and design.</p>
+      </div>
+      
+      <Navigation />
+
+      <HoverCardGroup client:only="react" cards={htmlCssCards} />
+    </main>
+  </body>
+</html>

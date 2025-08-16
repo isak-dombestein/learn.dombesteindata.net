@@ -7,13 +7,13 @@ import { cardData } from "../data/cardData.js"; // Import all data
 
 // Filter the data for this page specifically
 const htmlCssCards = cardData.filter(
-  card => card.category === 'HTML' || card.category === 'CSS'
+  card => card.category === 'HTML'
 );
 ---
 
 <html lang="en" class="dark">
   <head>
-    <title>HTML & CSS Reference</title>
+    <title>HTML Reference</title>
   </head>
   <body class="dark:text-gray-100 min-h-screen font-sans">
 
@@ -21,8 +21,8 @@ const htmlCssCards = cardData.filter(
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
       <div class="text-center mb-8">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">HTML & CSS Reference</h1>
-        <p class="text-base md:text-lg text-gray-600 dark:text-gray-400">Core concepts for structure and styling.</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">HTML Reference</h1>
+        <p class="text-base md:text-lg text-gray-600 dark:text-gray-400">Core concepts for structure and content.</p>
       </div>
       
       <Navigation />
