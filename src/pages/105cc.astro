@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import AnimatedBlobBackground from '../components/AnimatedBlobBackground.astro';
+import WelcomeButton from '../components/WelcomeBtn.astro';
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="https://learn.dombesteindata.net/favicon.png" />
+    <title>Web Dev Reference</title>
+  </head>
+  <body class="dark:text-gray-100 min-h-screen font-sans">
+    
+    <AnimatedBlobBackground />
+
+    <main class="min-h-screen flex flex-col items-center justify-center text-center p-4 relative z-10">
+      <h1 class="text-5xl md:text-6xl font-bold text-white">Utilities</h1>
+      <p class="mt-2 text-lg text-gray-400">Recommended utilities and services to check out</p>
+
+      <div class="mt-12 flex flex-wrap justify-center gap-8 md:gap-12">
+        <WelcomeButton
+          href="https://code.visualstudio.com"
+          imageUrl="https://learn.dombesteindata.net/assets/vscode.png"
+          imageAlt="Visual Studio Code Icon"
+          label="Visual Studio Code"
+        />
+        <WelcomeButton
+          href="https://www.github.com"
+          imageUrl="https://learn.dombesteindata.net/assets/github.png"
+          imageAlt="GitHub Logo"
+          label="GitHub"
+          />
+        <WelcomeButton
+          href="https://education.github.com/pack"
+          imageUrl="https://learn.dombesteindata.net/assets/ghsdp.png"
+          imageAlt="GitHub Octocat Icon"
+          label="GitHub Student Developer Pack"
+        />
+        <WelcomeButton
+            href="https://www.gitkraken.com/"
+            imageUrl="https://learn.dombesteindata.net/assets/gitkraken.png"
+            imageAlt="GitKraken Logo"
+            label="GitKraken"
+        />
+        <WelcomeButton
+            href="https://www.w3schools.com"
+            imageUrl="https://learn.dombesteindata.net/assets/w3schools.svg"
+            imageAlt='W3Schools Logo'
+            label="W3Schools"
+        />
+      </div>
+    </main>
+  </body>
+</html>
