@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import AnimatedBlobBackground from '../components/AnimatedBlobBackground.astro';
+import WelcomeButton from '../components/WelcomeBtn.astro'; 
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="https://learn.dombesteindata.net/favicon.png" />
+    <title>AGS for macOS</title>
+  </head>
+  <body class="dark:text-gray-100 min-h-screen font-sans">
+    
+    <AnimatedBlobBackground />
+
+    <main class="min-h-screen flex flex-col items-center justify-center text-center p-4 relative z-10">
+      <h1 class="text-5xl md:text-6xl font-bold text-white">AGS & macOS</h1>
+      <p class="mt-4 max-w-3xl text-lg text-gray-400">
+        Unfortunately, the AGS Editor is not natively available on any platform outside of Windows. However, there is still a way you can get the AGS Editor running on your Mac.
+      </p>
+
+      <p class="mt-8 max-w-3xl text-lg text-gray-400">
+        We've developed two install scripts to get AGS running on your Mac. The two scripts provided are as follows:
+      </p>
+
+      <div class="my-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
+ 
+        <div class="bg-white/10 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 rounded-xl shadow-md p-6 text-left transition-colors hover:border-purple-400/50">
+          <h2 class="font-bold text-xl text-white mb-2">minSetup.sh</h2>
+          <p class="text-base text-gray-300">
+            A minimal install script that only installs the core essentials to run the AGS Editor on your system. This script installs Homebrew, Wine, Microsoft .NET 4.8 and the portable edition of AGS to your /Applications folder.
+          </p>
+        </div>
+
+        <div class="bg-white/10 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 rounded-xl shadow-md p-6 text-left transition-colors hover:border-purple-400/50">
+          <h2 class="font-bold text-xl text-white mb-2">advSetup.sh</h2>
+          <p class="text-base text-gray-300">
+            A more advanced script that installs everything `minSetup.sh` does, but also compiles a native macOS build of the AGS engine. This script will take much longer to finish but allows you to test your game with native performance.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="mt-8 max-w-3xl text-lg text-gray-400">
+        To install AGS on your Mac, please press the button below to proceed to the GitHub repository, which provides the most updated commands to execute the scripts.
+      </p>
+
+      <div class="mt-12">
+        <WelcomeButton
+            href="https://www.github.com/isak-dombestein/ags_macos"
+            imageUrl="https://learn.dombesteindata.net/assets/github.png"
+            imageAlt="GitHub Logo"
+            label="Proceed to GitHub"
+        />
+      </div>
+    </main>
+  </body>
+</html>

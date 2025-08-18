@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import AnimatedBlobBackground from '../components/AnimatedBlobBackground.astro';
+import WelcomeBtn from '../components/WelcomeBtn.astro';
+---
+
+<html lang="en" class="dark">
+  <head>
+    <title>Adventure Game Studio</title>
+    <link rel="icon" href="https://learn.dombesteindata.net/favicon.png" />
+  </head>
+  <body class="dark:text-gray-100 min-h-screen font-sans">
+    <AnimatedBlobBackground />
+
+    <main class="min-h-screen flex flex-col items-center justify-center text-center p-4 relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold text-white">Adventure Game Studio</h1>
+
+        <p class="mt-2 text-lg text-gray-400">
+            Adventure Game Studio (AGS) is an open source application designed for making point-and-click adventure games. 
+            <br />
+            AGS is completely free and supports most platforms. The Desktop editor however is only available for Windows. This means that users running macOS and Linux by default cannot run the AGS Editor on their system.
+            <br />
+        </p>
+
+        <hr />
+
+        <p class="mt-2 text-lg text-gray-400">Select your OS for instructions on how to install the AGS Editor for your system.</p>
+        
+        <div class="mt-12 flex flex-wrap justify-center gap-8 md:gap-12">
+            <WelcomeBtn
+            href="/ags_macos"
+            imageUrl="https://learn.dombesteindata.net/assets/apple.png"
+            imageAlt="Apple Logo"
+            label="macOS"
+            />
+            <WelcomeBtn
+                href="https://www.adventuregamestudio.co.uk/create/"
+                imageUrl="https://learn.dombesteindata.net/assets/windows.png"
+                imageAlt="Windows Logo"
+                label="Windows"
+            /> 
+        </div>
+    </main>
+
+    
+        
+  </body>
+</html>
