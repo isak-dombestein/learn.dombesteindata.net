@@ -1,11 +1,36 @@
-<nav class="flex justify-center gap-4 md:gap-6 border-b-2 border-gray-200 dark:border-gray-700 pb-8 mb-8">
-    <a href="/html" class="text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">
-        HTML
-    </a>
-    <a href="/css" class="text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">
-        CSS
-    </a>
-    <a href="/javascript" class="text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">
-      JavaScript
-    </a>
+---
+import NavLink from './NavLink.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="flex flex-wrap justify-center gap-4 md:gap-6 border-b-2 border-gray-200 dark:border-gray-700 pb-8 mb-8">
+    <NavLink
+        href="/html"
+        imageUrl="https://learn.dombesteindata.net/assets/HTML5.png"
+        imageAlt="HTML Logo"
+        label="HTML"
+        isActive={currentPath.startsWith('/html')}
+    />
+    <NavLink
+        href="/css"
+        imageUrl="https://learn.dombesteindata.net/assets/CSS3.png"
+        imageAlt="CSS Logo"
+        label="CSS"
+        isActive={currentPath.startsWith('/css')}
+    />
+    <NavLink
+        href="/javascript"
+        imageUrl="https://learn.dombesteindata.net/assets/JavaScript.png"
+        imageAlt="JavaScript Logo"
+        label="JavaScript"
+        isActive={currentPath.startsWith('/javascript')}
+    />
+    <NavLink
+        href="/utilities"
+        imageUrl="https://learn.dombesteindata.net/assets/utils.svg"
+        imageAlt="Utilities Icon"
+        label="Utilities"
+        isActive={currentPath.startsWith('/utilities')}
+    />
 </nav>
