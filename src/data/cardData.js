@@ -1,7 +1,7 @@
 export const cardData = [
-	// =========================================================================
-	// HTML
-	// =========================================================================
+
+	//HTML
+
 	{
 		category: "HTML",
 		subcategory: "Document Structure",
@@ -123,9 +123,8 @@ export const cardData = [
 		link: "https://www.w3schools.com/tags/tag_button.asp",
 	},
 
-	// =========================================================================
 	// CSS
-	// =========================================================================
+
 	{
 		category: "CSS",
 		subcategory: "Selectors",
@@ -145,7 +144,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Box Model",
-		title: "margin & padding",
+		title: "Margin & Padding",
 		content: "`margin` is the space outside an element's border. `padding` is the space inside.",
 		code: `.box {\n  margin: 20px;\n  padding: 10px;\n}`,
 		link: "https://www.w3schools.com/css/css_boxmodel.asp",
@@ -153,7 +152,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Box Model",
-		title: "width, height, border",
+		title: "Width, Height, Border",
 		content: "Define the dimensions and border of an element.",
 		code: `.box {\n  width: 100px;\n  height: 100px;\n  border: 1px solid black;\n}`,
 		link: "https://www.w3schools.com/css/css_border.asp",
@@ -161,7 +160,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Layout",
-		title: "display",
+		title: "Display",
 		content: "Controls how an element is displayed. Common values are `block`, `inline`, `flex`, `grid`, and `none`.",
 		code: `span { display: block; }`,
 		link: "https://www.w3schools.com/css/css_display_visibility.asp",
@@ -185,7 +184,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Layout",
-		title: "position",
+		title: "Position",
 		content: "Controls the positioning of an element. `relative`, `absolute`, and `fixed` are key values.",
 		code: `.modal {\n  position: fixed;\n  top: 0;\n  left: 0;\n}`,
 		link: "https://www.w3schools.com/css/css_positioning.asp",
@@ -193,7 +192,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Typography",
-		title: "font-family & font-size",
+		title: "Font Family & Font Size",
 		content: "Controls the typeface and size of the text.",
 		code: `body {\n  font-family: Arial, sans-serif;\n  font-size: 16px;\n}`,
 		link: "https://www.w3schools.com/cssref/pr_font_font-family.asp",
@@ -201,7 +200,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Typography",
-		title: "color & font-weight",
+		title: "Color & Font Weightt",
 		content: "Sets the text color and its thickness (e.g., `normal` or `bold`).",
 		code: `p {\n  color: #333;\n  font-weight: bold;\n}`,
 		link: "https://www.w3schools.com/cssref/pr_text_color.asp",
@@ -209,7 +208,7 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Styling & Effects",
-		title: "background-color",
+		title: "Background Color",
 		content: "Sets the background color of an element.",
 		code: `div { background-color: #f0f0f0; }`,
 		link: "https://www.w3schools.com/cssref/pr_background-color.asp",
@@ -217,15 +216,14 @@ export const cardData = [
 	{
 		category: "CSS",
 		subcategory: "Styling & Effects",
-		title: "border-radius",
+		title: "Border Radius",
 		content: "Rounds the corners of an element's border.",
 		code: `.card { border-radius: 8px; }`,
 		link: "https://www.w3schools.com/css/css3_borders.asp",
 	},
 
-	// =========================================================================
-	// JavaScript
-	// =========================================================================
+	// JS
+
 	{
 		category: "JavaScript",
 		subcategory: "Core Concepts",
@@ -277,7 +275,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "Control Flow",
-		title: "if / else",
+		title: "If / Else",
 		content: "Executes code conditionally. Runs one block of code if a condition is true, and another if it's false.",
 		code: `if (score > 50) {\n  console.log("You passed!");\n} else {\n  console.log("Try again.");\n}`,
 		link: "https://www.w3schools.com/js/js_if_else.asp",
@@ -285,7 +283,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "Control Flow",
-		title: "for Loop",
+		title: "For-Loop",
 		content: "Repeats a block of code a specific number of times. Great for iterating over arrays.",
 		code: `for (let i = 0; i < fruits.length; i++) {\n  console.log(fruits[i]);\n}`,
 		link: "https://www.w3schools.com/js/js_loop_for.asp",
@@ -293,7 +291,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "DOM Manipulation",
-		title: "document.querySelector",
+		title: "Document QuerySelector",
 		content: "Selects the first element in the document that matches a CSS selector.",
 		code: `const button = document.querySelector('#my-button');`,
 		link: "https://www.w3schools.com/jsref/met_document_queryselector.asp",
@@ -301,7 +299,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "DOM Manipulation",
-		title: ".textContent & .style",
+		title: "Text Content & Style",
 		content: "Change the text content or the CSS styles of a selected element.",
 		code: `const heading = document.querySelector('h1');\nheading.textContent = 'New Title';\nheading.style.color = 'red';`,
 		link: "https://www.w3schools.com/jsref/prop_node_textcontent.asp",
@@ -309,7 +307,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "DOM Manipulation",
-		title: ".classList.toggle()",
+		title: "ClassList Toggle",
 		content: "Adds a CSS class if it's not present, or removes it if it is. Perfect for toggles.",
 		code: `document.body.classList.toggle('dark-mode');`,
 		link: "https://www.w3schools.com/jsref/prop_element_classlist.asp",
@@ -317,7 +315,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "Events",
-		title: "addEventListener",
+		title: "Event Listeners",
 		content: "Attaches a function (an 'event listener') to an element that runs when a specific event occurs.",
 		code: `button.addEventListener('click', () => {\n  console.log('Button was clicked!');\n});`,
 		link: "https://www.w3schools.com/jsref/met_element_addeventlistener.asp",

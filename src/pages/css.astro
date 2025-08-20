@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import HoverCardGroup from "../components/HoverCardGroup.jsx";
 import Navigation from "../components/Navigation.astro"; 
+import Footer from '../components/Footer.astro';
 import AnimatedBlobBackground from '../components/AnimatedBlobBackground.astro';
 import { cardData } from "../data/cardData.js"; // Import all data
 
@@ -30,5 +31,6 @@ const htmlCssCards = cardData.filter(
 
       <HoverCardGroup client:only="react" cards={htmlCssCards} />
     </main>
+    <Footer />
   </body>
 </html>

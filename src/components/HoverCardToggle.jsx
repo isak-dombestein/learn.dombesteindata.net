@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Copy, Check } from "lucide-react";
 
 export default function HoverCardToggle({ title, category, content, forceExpand = null, code = "", link = ""}) {

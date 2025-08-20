@@ -33,7 +33,7 @@ export default function HoverCardGroup({ cards }) {
 				</button>
 			</div>
 
-			<div className="space-y-8">
+			<div className="space-y-15">
 				{Object.entries(groupedData).map(([subcategory, cardItems]) => (
 					<section key={subcategory}>
 						<h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4 border-b-2 border-gray-200 dark:border-gray-700 pb-2">
