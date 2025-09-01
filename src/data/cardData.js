@@ -315,7 +315,7 @@ export const cardData = [
 	{
 		category: "JavaScript",
 		subcategory: "Events",
-		title: "Event Listeners",
+		title: "Event Listener",
 		content: "Attaches a function (an 'event listener') to an element that runs when a specific event occurs.",
 		code: `button.addEventListener('click', () => {\n  console.log('Button was clicked!');\n});`,
 		link: "https://www.w3schools.com/jsref/met_element_addeventlistener.asp",
