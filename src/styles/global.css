@@ -2,3 +2,38 @@
 @import'tailwindcss/preflight';
 
 @tailwind utilities;
+
+/* -- Base fallvacks for older browsers that don't support OKLCH / modern color functions */
+@layer base {
+    :root{
+        color-scheme: dark-light;
+    }
+
+    html {
+        background: #0b0d10;
+        color: #e7eaf0;
+    }
+
+    @supports (color: oklch(0.92 0.02 265)) {
+        html {
+            color: oklch(0.92 0.02 265);
+            background: oklch(0.16 0.01 265);
+        }
+    }
+
+    a {
+        color: #a78bfa;
+    }
+    @supports (color: oklch(0.76 0.12 295)) {
+        a {
+            color: oklch(0.76 0.12 295);
+        }
+    }
+
+    @media (forced-colors: active) {
+        :root { forced-color-adjust: none; }
+        html { background: Canvas; color: CanvasText; }
+        a { color: LinkText; }
+        hr {border-color: GrayText; }
+    }
+}
