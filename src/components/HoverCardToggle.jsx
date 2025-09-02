@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Copy, Check } from "lucide-react";
 
-export default function HoverCardToggle({ title, category, content, forceExpand = null, code = "", link = ""}) {
+export default function HoverCardToggle({ title, level, content, forceExpand = null, code = "", link = ""}) {
   const [expanded, setExpanded] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -24,15 +24,9 @@ export default function HoverCardToggle({ title, category, content, forceExpand 
       <div className="bg-card-ol backdrop-blur-lg border border-border rounded-xl shadow-md p-4 transition-all duration-300 flex flex-col">
         <div className="flex justify-between items-start gap-4 mb-3">
           <h2 className="text-lg font-semibold min-w-0 break-words text-fg">{title}</h2>
-          {/*
-            The below code is responsible for showing a tag with the "language"
-            on each element card. This is not really needed at this point, which
-            is why it's been commented out.
-            If we change this later, it might be put back in.
-
-          <span className="flex-shrink-0 text-xs px-2 py-1 rounded-full bg-[rgba(var(--brand-rgb),0.45)] text-fg font-medium shadow-sm border border-[rgba(var(--brand-rgb),0.50)]">
-            {category}
-          </span> */}
+          <span className="flex-shrink-0 text-xs px-2 py-1 rounded-full bg-btn-main text-white font-medium shadow-sm">
+            {level}
+          </span>
         </div>
 
         <button
@@ -63,11 +57,12 @@ export default function HoverCardToggle({ title, category, content, forceExpand 
                 {content}
               </p>
               {code && (
-                <pre className="relative z-50 bg-black/50 text-sm p-3 rounded-md overflow-x-auto text-fg shadow-inner">
+                <div className="relative">
                   <button
                     onClick={handleCopy}
-                    className="absolute top-2 right-2 p-1.5 rounded-md bg-[rgba(var(--muted-rgb),0.80)] hover:bg-[rgba(var(--muted-rgb),0.90)] transition text-[rgba(var(--fg-rgb),0.80)]"
+                    className="absolute top-1 right-2 p-1.5 rounded-md bg-[rgba(var(--muted-rgb),0.85)] hover:bg-[rgba(var(--muted-rgb),1)] transition text-[rgba(var(--fg-rgb),0.85)] shadow-md z-50"
                     aria-label="Copy Code"
+                    type="button"
                   >
                     {isCopied ? (
                       <Check className="w-4 h-4 text-green-400" />
@@ -75,8 +70,10 @@ export default function HoverCardToggle({ title, category, content, forceExpand 
                       <Copy className="w-4 h-4" />
                     )}
                   </button>
-                  <code>{code}</code>
-                </pre>
+                  <pre className="relative bg-black text-sm p-6 pr-16 rounded-md overflow-x-auto text-fg shadow-inner">
+                    <code>{code}</code>
+                  </pre>
+                </div>
               )}
               {link && (
                 <a

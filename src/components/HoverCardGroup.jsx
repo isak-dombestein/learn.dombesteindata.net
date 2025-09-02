@@ -36,7 +36,7 @@ export default function HoverCardGroup({ cards }) {
 			<div className="space-y-15">
 				{Object.entries(groupedData).map(([subcategory, cardItems]) => (
 					<section key={subcategory}>
-						<h3 className="text-2xl font-semibold text-[rgba(var(--fg-rgb),0.90)] mb-4 border-b-2 border-border pb-2">
+						<h3 className="text-2xl font-semibold text-[rgba(var(--fg-rgb),0.90)] mb-4 rounded-full inline-block px-4 py-1 bg-brand-rgb/20 hover:bg-brand-rgb/35 transition">
 							{subcategory}
 						</h3>
 						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
