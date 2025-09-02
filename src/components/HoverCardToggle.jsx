@@ -21,18 +21,25 @@ export default function HoverCardToggle({ title, category, content, forceExpand 
 
 return (
 		<div className="relative card">
-			<div className="bg-white/10 dark:bg-gray-800/40 backdrop-blur-lg border border-white/20 rounded-xl shadow-md p-4 transition-all duration-300 flex flex-col">
+			<div className="bg-card-ol backdrop-blur-lg border border-border rounded-xl shadow-md p-4 transition-all duration-300 flex flex-col">
 				<div className="flex justify-between items-start gap-4 mb-3">
-					<h2 className="text-lg font-semibold min-w-0 break-words">{title}</h2>
-					<span className="flex-shrink-0 text-xs px-2 py-1 rounded-full bg-purple-300 dark:bg-purple-600 text-white font-medium shadow-sm">
+					<h2 className="text-lg font-semibold min-w-0 break-words text-fg">{title}</h2>
+					{/* 
+
+						The below code is responsible for showing a tag with the "language"
+						on each element card. This is not really needed at this point, which
+						is why it's been commented out.
+						If we change this later, it might be put back in.
+
+					<span className="flex-shrink-0 text-xs px-2 py-1 rounded-full bg-[rgba(var(--brand-rgb),0.45)] text-fg font-medium shadow-sm border border-[rgba(var(--brand-rgb),0.50)]">
 						{category}
-					</span>
+					</span> */ }
 				</div>
 
 				<button
 					type="button"
 					onClick={() => setExpanded((prev) => !prev)}
-					className="inline-flex items-center justify-center gap-1 px-4 py-1 rounded-full bg-purple-200 dark:bg-purple-500 text-purple-800 dark:text-white text-sm font-medium hover:bg-purple-300 dark:hover:bg-purple-400 transition mb-3 self-start"
+					className="inline-flex items-center justify-center gap-1 px-4 py-1 rounded-full bg-btn-main text-white text-sm font-medium shadow hover:shadow-lg hover:-translate-y-0.5 transform filter hover:brightness-110 transition-transform transition-colors transition-shadow duration-300 ease-out mb-3 self-start hover:bg-btn-hover hover:[text-shadow:0_1px_2px_rgba(0,0,0,0.4)]"
 				>
 					{expanded ? (
 						<>
@@ -53,14 +60,14 @@ return (
 				>
 					<div className="overflow-hidden">
 						<div className="space-y-3 pt-2">
-							<p className="text-sm text-gray-700 dark:text-gray-300">
+							<p className="text-sm text-[rgba(var(--fg-rgb),0.90)]">
 								{content}
 							</p>
 							{code && (
-								<pre className="relative bg-black/20 text-sm p-3 rounded-md overflow-x-auto text-gray-100">
+								<pre className="relative bg-[rgba(var(--muted-rgb),0.60)] text-sm p-3 rounded-md overflow-x-auto text-fg">
                   <button
                     onClick={handleCopy}
-                    className="absolute top-2 right-2 p-1.5 rounded-md bg-gray-700/50 hover:bg-gray-600/70 transition text-gray-300"
+                    className="absolute top-2 right-2 p-1.5 rounded-md bg-[rgba(var(--muted-rgb),0.80)] hover:bg-[rgba(var(--muted-rgb),0.90)] transition text-[rgba(var(--fg-rgb),0.80)]"
                     aria-label="Copy Code"
                   >
                     {isCopied ? (
@@ -77,7 +84,7 @@ return (
 									href={link}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="inline-block mt-2 px-3 py-1.5 text-sm font-medium text-white rounded-full transition bg-blue-500/20 backdrop-blur-sm border border-blue-300/30 hover:bg-blue-500/40 hover:border-blue-300/50"
+									className="inline-block mt-2 px-3 py-1.5 text-sm font-medium text-fg rounded-full transition bg-[rgba(var(--brand-rgb),0.30)] backdrop-blur-sm border border-[rgba(var(--brand-rgb),0.45)] hover:bg-[rgba(var(--brand-rgb),0.50)] hover:border-[rgba(var(--brand-rgb),0.60)]"
 								>
 									Learn more on W3Schools
 								</a>

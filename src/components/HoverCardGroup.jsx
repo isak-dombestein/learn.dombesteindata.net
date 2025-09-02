@@ -22,7 +22,7 @@ export default function HoverCardGroup({ cards }) {
 			<div className="flex justify-center mb-8">
 				<button
 					onClick={() => setGlobalExpanded((prev) => !prev)}
-					className="px-6 py-2 text-base bg-purple-600 text-white rounded-full inline-flex items-center gap-2 hover:bg-purple-700 transition-transform transform hover:scale-105"
+					className="px-6 py-2 text-base bg-btn-main text-fg rounded-full inline-flex items-center gap-2 hover:bg-brand transition-transform transform hover:scale-105"
 				>
 					{globalExpanded ? (
 						<ChevronUp className="w-5 h-5" />
@@ -36,7 +36,7 @@ export default function HoverCardGroup({ cards }) {
 			<div className="space-y-15">
 				{Object.entries(groupedData).map(([subcategory, cardItems]) => (
 					<section key={subcategory}>
-						<h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4 border-b-2 border-gray-200 dark:border-gray-700 pb-2">
+						<h3 className="text-2xl font-semibold text-[rgba(var(--fg-rgb),0.90)] mb-4 border-b-2 border-border pb-2">
 							{subcategory}
 						</h3>
 						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

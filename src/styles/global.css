@@ -3,37 +3,91 @@
 
 @tailwind utilities;
 
-/* -- Base fallvacks for older browsers that don't support OKLCH / modern color functions */
+/* --- Base fallbacks for older browsers that don't support OKLCH / modern color functions --- */
 @layer base {
-    :root{
-        color-scheme: dark-light;
-    }
+  :root {
+    color-scheme: dark light;
 
-    html {
-        background: #0b0d10;
-        color: #e7eaf0;
-    }
+    /* universal hex fallbacks */
+    --bg:    #0b0d10;
+    --fg:    #e7eaf0;
+    --brand: #a78bfa;
 
-    @supports (color: oklch(0.92 0.02 265)) {
-        html {
-            color: oklch(0.92 0.02 265);
-            background: oklch(0.16 0.01 265);
-        }
-    }
+    --card:  #0f1317;
+    --muted: #1b1e24;
+    --border:#2b2f36;
+    --brand-hover:#8b5cf6;
+    --btn-main: #a32ecc;
+    --btn-hover: #bb3fe6;
+    --btn-main: #a32ecc;
+    --btn-hover: #bb3fe6;
 
-    a {
-        color: #a78bfa;
-    }
-    @supports (color: oklch(0.76 0.12 295)) {
-        a {
-            color: oklch(0.76 0.12 295);
-        }
-    }
+    /* also allows for opacity support */
+    --bg-rgb:    11 13 16;
+    --fg-rgb:    231 234 240;
+    --brand-rgb: 167 139 250;
+    --card-rgb:   15 19 23;
+    --muted-rgb:  27 30 36;
+    --border-rgb: 43 47 54;
+    --brand-hover-rgb: 139 92 246;
+    --btn-main-rgb: 163 46 204;
+    --btn-hover-rgb: 187 63 230;
+  }
 
-    @media (forced-colors: active) {
-        :root { forced-color-adjust: none; }
-        html { background: Canvas; color: CanvasText; }
-        a { color: LinkText; }
-        hr {border-color: GrayText; }
+  html {
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  a {
+    color: var(--brand);
+  }
+
+  /* if supported, use oklch values */
+  @supports (color: oklch(0.92 0.02 265)) {
+    :root {
+        --bg:    oklch(0.16 0.01 265);
+        --fg:    oklch(0.92 0.02 265);
+        --brand: oklch(0.76 0.12 295);
+        --card:         oklch(0.19 0.01 265);
+        --muted:        oklch(0.23 0.01 265);
+        --border:       oklch(0.32 0.01 265);
+        --brand-hover:  oklch(0.72 0.13 295);
+        --btn-main:     oklch(0.558 0.288 302.321);
+        --btn-hover:    oklch(0.627 0.265 303.9);
+
+        /* provide RGB for opacity-friendly utilities */ 
+        --bg-rgb:    11 13 16;
+        --fg-rgb:    231 234 240;
+        --brand-rgb: 167 139 250;
+        --card-rgb:   15 19 23;
+        --muted-rgb:  27 30 36;
+        --border-rgb: 43 47 54;
+        --brand-hover-rgb: 139 92 246;
+        --btn-main-rgb: 163 46 204;
+        --btn-hover-rgb: 187 63 230;
     }
+  }
+
+  @media (forced-colors: active) {
+    :root { forced-color-adjust: none; }
+    html { background: Canvas; color: CanvasText; }
+    a { color: LinkText; }
+    hr { border-color: GrayText; }
+  }
+}
+
+@layer utilities {
+    .bg-bg { background-color: var(--bg); }
+    .text-fg     { color: var(--fg); }
+    .text-brand  { color: var(--brand); }
+    .bg-brand    { background-color: var(--brand); }
+    .border-app  { border-color: var(--border, #2b2f36); }
+    .bg-card   { background-color: var(--card); }
+    .bg-muted  { background-color: var(--muted); }
+    .border-border { border-color: var(--border); }
+    .text-brand-hover { color: var(--brand-hover); }
+    .bg-brand-hover { background-color: var(--brand-hover); }
+    .bg-btn-main { background-color: var(--btn-main); }
+    .bg-btn-hover { background-color: var(--btn-hover); }
 }
