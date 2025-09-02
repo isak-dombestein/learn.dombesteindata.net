@@ -17,8 +17,7 @@
     --muted: #1b1e24;
     --border:#2b2f36;
     --brand-hover:#8b5cf6;
-    --btn-main: #a32ecc;
-    --btn-hover: #bb3fe6;
+    --card-bg: rgba(30, 41, 57, 0.4);
     --btn-main: #a32ecc;
     --btn-hover: #bb3fe6;
 
@@ -66,6 +65,7 @@
         --brand-hover-rgb: 139 92 246;
         --btn-main-rgb: 163 46 204;
         --btn-hover-rgb: 187 63 230;
+        --card-bg-rgba: 30, 41, 57, 0.4;
     }
   }
 
@@ -90,4 +90,10 @@
     .bg-brand-hover { background-color: var(--brand-hover); }
     .bg-btn-main { background-color: var(--btn-main); }
     .bg-btn-hover { background-color: var(--btn-hover); }
+    .bg-card-bg { background-color: var(--card-bg) }
+
+    .bg-card-ol { background-color: rgba(30,41057,0.4); }
+    @supports (color: oklab(0 0 0 / 0)) {
+        .bg-card-ol { background-color: oklab(0.278 -0.00750867 -0.0321344 / 0.4); }
+    }
 }
