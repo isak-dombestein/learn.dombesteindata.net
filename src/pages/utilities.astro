@@ -11,7 +11,7 @@ import Footer from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="https://learn.dombesteindata.net/favicon.png" />
-    <title>Web Dev Utilities</title>
+    <title>Web Dev Utilities | Dombestein Data Learning Resources</title>
   </head>
   <body class="dark:text-gray-100 min-h-screen font-sans">
     
@@ -79,24 +79,49 @@ import Footer from '../components/Footer.astro';
           imageAlt="Twine Logo"
           label="Twine"
         />
-        <!--
-        This is commented out due to us not needing to use it, but we can probably keep the link to inklewriter live in case people want to play around with it.
+        <!-- The Inkle program we won't really use at all, but Kristian is showing us what it is and why we don't use it. I'll leave the button up for students to play around with it. -->
         <WelcomeButton
           href="https://www.inklestudios.com/ink/"
           imageUrl="https://learn.dombesteindata.net/assets/inkle.png"
           imageAlt="Inkle Logo"
           label="Inkle"
         />
-      -->
-
-      <!--
-      Apps tio add;
-      - Filezilla
-      - WinSCP
-      - GIMP
-      - Canva
-      - Wireframe
-      -->
+        <WelcomeButton
+          href="https://filezilla-project.org/download.php?type=client"
+          imageUrl="https://learn.dombesteindata.net/assets/filezilla.svg"
+          imageAlt="FileZilla Logo"
+          label="FileZilla"
+        />
+        <WelcomeButton
+          href="https://winscp.net/eng/download.php"
+          imageUrl="https://learn.dombesteindata.net/assets/winscp.png"
+          imageAlt="WinSCP Logo"
+          label="WinSCP (Windows)"
+        />
+        <WelcomeButton
+          href="https://commander-one.com/"
+          imageUrl="https://learn.dombesteindata.net/assets/commander-one.png"
+          imageAlt="Commander One Logo"
+          label="Commander One (macOS)"
+        />
+        <WelcomeButton
+          href="https://www.gimp.org/"
+          imageUrl="https://learn.dombesteindata.net/assets/gimp.png"
+          imageAlt="GIMP Logo"
+          label="GIMP"
+        />
+        <WelcomeButton
+          href="https://www.canva.com/"
+          imageUrl="https://learn.dombesteindata.net/assets/canva_alt1.svg"
+          imageAlt="Canva Logo"
+          label="Canva"
+        />
+        <WelcomeButton 
+          href="https://wireframe.cc/"
+          imageUrl="https://learn.dombesteindata.net/assets/wireframecc.webp"
+          imageAlt="Wireframe.cc Logo"
+          label="wireframe.cc"
+        />
       </div>
     </main>
     <Footer />
